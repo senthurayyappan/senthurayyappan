@@ -27,12 +27,12 @@ exports.chartConfigs = {
     title: 'Time Spent by Project',
     width: 400,
     height: 400,
-    maxLength: 6,
+    maxLength: 8,
   },
   languages: {
     title: 'Programming Languages',
     width: 400,
     height: 400,
-    maxLength: 6,
+    maxLength: 8,
   },
 }; 
