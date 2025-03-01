@@ -1,0 +1,56 @@
+
+    <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Title -->
+      <text 
+        x="50%" 
+        y="27"
+        text-anchor="middle" 
+        font-family="Arial, sans-serif" 
+        font-size="14" 
+        font-weight="bold" 
+        fill="#7c848c"
+      >Last 7 Days</text>
+
+      <!-- Total Hours -->
+      <text 
+        x="5%" 
+        y="55" 
+        text-anchor="start" 
+        font-family="Arial, sans-serif" 
+        font-size="12" 
+        fill="#7c848c"
+      >Total Hours:</text>
+
+      <text 
+        x="95%" 
+        y="55" 
+        text-anchor="end" 
+        font-family="Arial, sans-serif" 
+        font-size="18" 
+        font-weight="bold" 
+        fill="#bfc6cc"
+
+      >6 hrs 16 mins</text>
+
+      <!-- Daily Average -->
+      <text 
+        x="5%" 
+        y="75" 
+        text-anchor="start" 
+        font-family="Arial, sans-serif" 
+        font-size="12" 
+        fill="#7c848c"
+      >Daily Average:</text>
+
+
+      <text 
+        x="95%" 
+        y="75" 
+        text-anchor="end" 
+        font-family="Arial, sans-serif" 
+        font-size="14" 
+        font-weight="bold" 
+        fill="#276ee0"
+      >1 hrs 15 mins</text>
+    </svg>
+  
