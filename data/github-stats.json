@@ -1,0 +1,998 @@
+{
+  "publicRepos": 81,
+  "followers": 93,
+  "following": 39,
+  "totalStars": 945,
+  "totalForks": 574,
+  "totalPRs": 642,
+  "totalIssues": 202,
+  "contributions": {
+    "total": 7130,
+    "totalCommits": 6016,
+    "byYear": {
+      "2017": {
+        "total": 46,
+        "commits": 39
+      },
+      "2018": {
+        "total": 336,
+        "commits": 300
+      },
+      "2019": {
+        "total": 207,
+        "commits": 195
+      },
+      "2020": {
+        "total": 559,
+        "commits": 531
+      },
+      "2021": {
+        "total": 420,
+        "commits": 406
+      },
+      "2022": {
+        "total": 214,
+        "commits": 203
+      },
+      "2023": {
+        "total": 373,
+        "commits": 354
+      },
+      "2024": {
+        "total": 957,
+        "commits": 845
+      },
+      "2025": {
+        "total": 1645,
+        "commits": 1416
+      },
+      "2026": {
+        "total": 2373,
+        "commits": 1727
+      }
+    }
+  },
+  "createdAt": "2017-02-02T17:14:07Z",
+  "topRepositories": [
+    {
+      "name": "neurobionics/robot-ci",
+      "stars": 95,
+      "forks": 387,
+      "description": "Effortless building, testing, and deploying customized robot operating systems at scale. ",
+      "url": "https://github.com/neurobionics/robot-ci",
+      "combinedScore": 482,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 7,
+          "totalCloners": 6
+        },
+        "2026-08-05": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-06": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 3,
+          "totalCloners": 2
+        },
+        "2026-08-07": {
+          "totalViews": 5,
+          "totalVisitors": 3,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-08": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 4,
+          "totalCloners": 2
+        },
+        "2026-08-09": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-10": {
+          "totalViews": 5,
+          "totalVisitors": 3,
+          "totalClones": 20,
+          "totalCloners": 19
+        },
+        "2026-08-11": {
+          "totalViews": 4,
+          "totalVisitors": 3,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-12": {
+          "totalViews": 7,
+          "totalVisitors": 5,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-13": {
+          "totalViews": 6,
+          "totalVisitors": 2,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-14": {
+          "totalViews": 16,
+          "totalVisitors": 5,
+          "totalClones": 4,
+          "totalCloners": 4
+        },
+        "2026-08-15": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 2,
+          "totalCloners": 1
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "neurobionics/onshape-robotics-toolkit",
+      "stars": 304,
+      "forks": 34,
+      "description": "A python library to facilitate interaction with Onshape's REST API",
+      "url": "https://github.com/neurobionics/onshape-robotics-toolkit",
+      "combinedScore": 338,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 7,
+          "totalCloners": 4
+        },
+        "2026-08-04": {
+          "totalViews": 11,
+          "totalVisitors": 7,
+          "totalClones": 6,
+          "totalCloners": 6
+        },
+        "2026-08-05": {
+          "totalViews": 4,
+          "totalVisitors": 2,
+          "totalClones": 10,
+          "totalCloners": 7
+        },
+        "2026-08-06": {
+          "totalViews": 8,
+          "totalVisitors": 4,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 5,
+          "totalVisitors": 3,
+          "totalClones": 10,
+          "totalCloners": 7
+        },
+        "2026-08-08": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 6,
+          "totalCloners": 5
+        },
+        "2026-08-09": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 10,
+          "totalCloners": 5
+        },
+        "2026-08-10": {
+          "totalViews": 6,
+          "totalVisitors": 3,
+          "totalClones": 15,
+          "totalCloners": 14
+        },
+        "2026-08-11": {
+          "totalViews": 7,
+          "totalVisitors": 4,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-12": {
+          "totalViews": 4,
+          "totalVisitors": 3,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-13": {
+          "totalViews": 15,
+          "totalVisitors": 14,
+          "totalClones": 9,
+          "totalCloners": 9
+        },
+        "2026-08-14": {
+          "totalViews": 15,
+          "totalVisitors": 15,
+          "totalClones": 4,
+          "totalCloners": 3
+        },
+        "2026-08-15": {
+          "totalViews": 8,
+          "totalVisitors": 5,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/anton",
+      "stars": 200,
+      "forks": 19,
+      "description": "anton is an open-source generative design framework built with Blender and Python",
+      "url": "https://github.com/senthurayyappan/anton",
+      "combinedScore": 219,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 2,
+          "totalCloners": 1
+        },
+        "2026-08-04": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-05": {
+          "totalViews": 3,
+          "totalVisitors": 3,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-06": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-08": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-09": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-10": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-11": {
+          "totalViews": 4,
+          "totalVisitors": 3,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-12": {
+          "totalViews": 5,
+          "totalVisitors": 4,
+          "totalClones": 3,
+          "totalCloners": 2
+        },
+        "2026-08-13": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 3,
+          "totalVisitors": 3,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-15": {
+          "totalViews": 7,
+          "totalVisitors": 3,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "neurobionics/opensourceleg",
+      "stars": 116,
+      "forks": 76,
+      "description": "An open-source SDK for developing and testing algorithms on commonly used robotic hardware.",
+      "url": "https://github.com/neurobionics/opensourceleg",
+      "combinedScore": 192,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 52,
+          "totalVisitors": 16,
+          "totalClones": 6,
+          "totalCloners": 5
+        },
+        "2026-08-04": {
+          "totalViews": 16,
+          "totalVisitors": 9,
+          "totalClones": 20,
+          "totalCloners": 17
+        },
+        "2026-08-05": {
+          "totalViews": 32,
+          "totalVisitors": 11,
+          "totalClones": 19,
+          "totalCloners": 7
+        },
+        "2026-08-06": {
+          "totalViews": 11,
+          "totalVisitors": 6,
+          "totalClones": 11,
+          "totalCloners": 9
+        },
+        "2026-08-07": {
+          "totalViews": 71,
+          "totalVisitors": 13,
+          "totalClones": 17,
+          "totalCloners": 11
+        },
+        "2026-08-08": {
+          "totalViews": 14,
+          "totalVisitors": 4,
+          "totalClones": 332,
+          "totalCloners": 14
+        },
+        "2026-08-09": {
+          "totalViews": 17,
+          "totalVisitors": 6,
+          "totalClones": 113,
+          "totalCloners": 31
+        },
+        "2026-08-10": {
+          "totalViews": 45,
+          "totalVisitors": 13,
+          "totalClones": 7,
+          "totalCloners": 7
+        },
+        "2026-08-11": {
+          "totalViews": 51,
+          "totalVisitors": 13,
+          "totalClones": 26,
+          "totalCloners": 8
+        },
+        "2026-08-12": {
+          "totalViews": 43,
+          "totalVisitors": 12,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-13": {
+          "totalViews": 98,
+          "totalVisitors": 10,
+          "totalClones": 34,
+          "totalCloners": 20
+        },
+        "2026-08-14": {
+          "totalViews": 112,
+          "totalVisitors": 9,
+          "totalClones": 63,
+          "totalCloners": 16
+        },
+        "2026-08-15": {
+          "totalViews": 16,
+          "totalVisitors": 6,
+          "totalClones": 8,
+          "totalCloners": 3
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/import-G-code",
+      "stars": 47,
+      "forks": 10,
+      "description": "Imports G-code files into Blender 2.80+ as a collection of layers which can then be animated or exported.",
+      "url": "https://github.com/senthurayyappan/import-G-code",
+      "combinedScore": 57,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 37,
+          "totalVisitors": 26,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-04": {
+          "totalViews": 6,
+          "totalVisitors": 5,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-05": {
+          "totalViews": 7,
+          "totalVisitors": 4,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-06": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-07": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-08": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-09": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-10": {
+          "totalViews": 4,
+          "totalVisitors": 4,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-11": {
+          "totalViews": 3,
+          "totalVisitors": 3,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-12": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 3,
+          "totalCloners": 2
+        },
+        "2026-08-13": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 4,
+          "totalVisitors": 2,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-15": {
+          "totalViews": 5,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/blendmsh",
+      "stars": 42,
+      "forks": 6,
+      "description": "Blendmsh is a bridge between Blender 2.80+ and Gmsh, a fast and light 3D finite element mesh generator.",
+      "url": "https://github.com/senthurayyappan/blendmsh",
+      "combinedScore": 48,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-04": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-05": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-06": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-07": {
+          "totalViews": 8,
+          "totalVisitors": 1,
+          "totalClones": 3,
+          "totalCloners": 2
+        },
+        "2026-08-08": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-09": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-10": {
+          "totalViews": 12,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-11": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-12": {
+          "totalViews": 3,
+          "totalVisitors": 2,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-13": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 6,
+          "totalVisitors": 3,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-15": {
+          "totalViews": 5,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/Arboc",
+      "stars": 24,
+      "forks": 12,
+      "description": "An underwater hyper-redundant snake robot.",
+      "url": "https://github.com/senthurayyappan/Arboc",
+      "combinedScore": 36,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-05": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-06": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-08": {
+          "totalViews": 2,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-09": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-10": {
+          "totalViews": 2,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-11": {
+          "totalViews": 2,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-12": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-13": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-15": {
+          "totalViews": 3,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "neurobionics/pyopensim",
+      "stars": 20,
+      "forks": 5,
+      "description": "Portable python bindings for OpenSim with comprehensive type hints.",
+      "url": "https://github.com/neurobionics/pyopensim",
+      "combinedScore": 25,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-04": {
+          "totalViews": 2,
+          "totalVisitors": 1,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-05": {
+          "totalViews": 6,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-06": {
+          "totalViews": 7,
+          "totalVisitors": 3,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-08": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 3,
+          "totalCloners": 3
+        },
+        "2026-08-09": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-10": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-11": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-12": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-13": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-14": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-15": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/oslsim",
+      "stars": 18,
+      "forks": 6,
+      "description": "A ROS package that provides the necessary interfaces to simulate the Open-source leg (OSL) proposed by the Neurobionics Lab at UMich",
+      "url": "https://github.com/senthurayyappan/oslsim",
+      "combinedScore": 24,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-04": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-05": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-06": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 8,
+          "totalVisitors": 1,
+          "totalClones": 2,
+          "totalCloners": 2
+        },
+        "2026-08-08": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-09": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-10": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-11": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-12": {
+          "totalViews": 2,
+          "totalVisitors": 2,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-13": {
+          "totalViews": 28,
+          "totalVisitors": 3,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 1,
+          "totalVisitors": 1,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-15": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    },
+    {
+      "name": "senthurayyappan/impedance-control-AIR19",
+      "stars": 18,
+      "forks": 1,
+      "description": "Dynamic modulation of human interactive robots using Impedance Control",
+      "url": "https://github.com/senthurayyappan/impedance-control-AIR19",
+      "combinedScore": 19,
+      "traffic": {
+        "2026-08-03": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-04": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-05": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-06": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-07": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-08": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-09": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 1,
+          "totalCloners": 1
+        },
+        "2026-08-10": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-11": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-12": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-13": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-14": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-15": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        },
+        "2026-08-16": {
+          "totalViews": 0,
+          "totalVisitors": 0,
+          "totalClones": 0,
+          "totalCloners": 0
+        }
+      }
+    }
+  ]
+}
