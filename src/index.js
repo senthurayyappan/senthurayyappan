@@ -2,9 +2,8 @@
  * Draws the stat board on my GitHub profile.
  *
  * Reads four numbers from GitHub, compares each against the same number a month ago,
- * and writes light and dark pictures of them into assets/. The README points at those
- * pictures; the workflow in .github/workflows/stats.yml runs this daily and commits
- * whatever changed.
+ * and draws them into assets/github-stats.svg. The README points at that file; the
+ * workflow in .github/workflows/stats.yml runs this daily and commits it if it moved.
  *
  *   node src/index.js            # needs GH_TOKEN
  *   npm run preview              # no network, invented numbers, for design work
@@ -15,18 +14,13 @@ const path = require('path')
 
 const { snapshot, backfill, assertPrivateVisibility } = require('./github')
 const history = require('./history')
-const { statsBoard, statsLink } = require('./render')
+const { statsBoard } = require('./render')
 
 const ROOT = path.join(__dirname, '..')
 const ASSETS = path.join(ROOT, 'assets')
 const HISTORY_FILE = path.join(ASSETS, 'history.json')
 const SNAPSHOT_FILE = path.join(ASSETS, 'github-stats.json')
-
-/** The page the link panel sends people to. */
-const STATS_PAGE = {
-  url: 'senthurayyappan.com/stats',
-  note: 'tracked since 2020, updated daily',
-}
+const BOARD_FILE = 'github-stats.svg'
 
 /**
  * The four tiles, in the order they are drawn: across the top row, then the bottom.
@@ -93,10 +87,7 @@ async function main() {
   }
 
   fs.mkdirSync(ASSETS, { recursive: true })
-  for (const mode of ['light', 'dark']) {
-    writeSvg(`github-stats-${mode}.svg`, statsBoard(tiles, mode))
-    writeSvg(`stats-link-${mode}.svg`, statsLink({ ...STATS_PAGE, mode }))
-  }
+  writeSvg(BOARD_FILE, statsBoard(tiles))
 
   const kept = history.save(HISTORY_FILE, history.record(entries, snap))
   console.log(`history.json: ${kept.length} entries, ${kept[0].date} .. ${kept[kept.length - 1].date}`)

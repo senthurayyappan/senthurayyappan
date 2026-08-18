@@ -1,15 +1,20 @@
 # How the stat board is made
 
-The profile README is two pictures. Both are SVG, both are redrawn every morning, and
-both are committed into `assets/` so the README can point at a plain file rather than
-at a service that has to be up when someone visits the page.
+The profile README is prose with one picture in the middle of it. The picture is SVG,
+redrawn every morning and committed into `assets/`, so the README points at a plain file
+rather than at a service that has to be up when someone visits the page.
+
+Everything that can be text is text. The link to the coding-stats page was a fifth panel
+at one point, and a panel is a picture of a link: unselectable, unsearchable, invisible
+to a screen reader beyond its alt attribute, and one more thing to redraw. Markdown
+renders a sentence better than an SVG does.
 
 ```
 .github/workflows/stats.yml   daily at 06:17 UTC, and on any push that touches src/
   └── src/index.js
         ├── src/github.js     four numbers, and a reconstructed month to compare with
         ├── src/history.js    assets/history.json -- one entry per day
-        └── src/render.js     the pictures
+        └── src/render.js     the picture
               ├── src/design.js   the site's tokens, transcribed
               ├── src/panel.js    the extruded frame and its hand-drawn edges
               ├── src/text.js     layout against senthur-handwriting.woff
@@ -67,14 +72,14 @@ displayed total, so this applies only to the seeded stretch and is gone within a
 
 If `history.json` is ever lost, nothing breaks — the next run seeds it again.
 
-## The pictures
+## The picture
 
-Both are transcriptions of the tiles at
+It is a transcription of the tiles at
 [senthurayyappan.com/stats](https://senthurayyappan.com/stats): the same two-by-two
-grid, the same extruded frame with its accent right wall and blue bottom wall, the
-same hand-drawn rule along each edge, the same type scale. `src/design.js` holds those
-values with a note on where each was copied from. Where this disagrees with the site,
-the site is right.
+grid, the same extruded frame with its accent right wall and blue bottom wall, the same
+hand-drawn rule along each edge, the same type scale. `src/design.js` holds those values
+with a note on where each was copied from. Where this disagrees with the site, the site
+is right.
 
 **Why the text is outlined.** GitHub serves these files through an `<img>`, which puts
 them in the SVG spec's secure static mode — no external stylesheet, no external font,
@@ -91,11 +96,13 @@ each contour and thinning it with Ramer–Douglas–Peucker at a tolerance of 4 
 — under a pixel at every size these glyphs are drawn — then emitting each distinct
 glyph once into `<defs>` and placing it with `<use>`, brings that to 45 KB.
 
-**Light and dark.** Two files each, selected by the README's `<picture>` element on
-`prefers-color-scheme`. The dark theme is the site's own: ink and paper swap, and the
-accent wall goes from red to yellow, exactly as `--sa-accent` does in `tokens.css`. The
-green used for a rising trend is re-stepped per theme rather than flipped, because
-`--sa-green` clears 4.5:1 against only one of the two surfaces.
+**One palette, not two.** There was a dark variant, swapped in by a `<picture>` element
+on `prefers-color-scheme`, and it was the site's own dark theme — ink and paper traded
+places, the accent wall red to yellow. It looked wrong in place. The site's dark surface
+is `#15130d` and GitHub's is `#0d1117`, so the panel faces landed as a barely-lighter
+smudge on the page instead of as objects sitting on it, and the frame — the whole point
+of the thing — stopped reading. Paper on GitHub's dark background reads as a card, which
+is what these are.
 
 ## Working on it locally
 
@@ -108,3 +115,9 @@ GH_TOKEN=$(gh auth token) npm start   # the real thing, writes into assets/
 `npm run preview` covers every case a tile draws differently — a rise, a small rise, a
 fall, and no movement — which is the point of it having invented numbers rather than
 real ones.
+
+## One thing that is not automatic
+
+GitHub Actions has to be enabled on this repository (Settings → Actions → General →
+*Allow all actions and reusable workflows*). With it off, a dispatched run sits in
+`queued` forever and never reports a failure, which is a confusing way to find out.

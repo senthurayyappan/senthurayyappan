@@ -12,8 +12,19 @@
 
 // ---------------------------------------------------------------- palette
 
-/** sa-ui tokens.css. `accent` is the right wall; it is the one hue that flips. */
-const LIGHT = {
+/**
+ * One palette, the site's light one, in both of GitHub's themes.
+ *
+ * There was a dark variant here, swapped in by a <picture> element on
+ * prefers-color-scheme, and it was the site's own dark theme: ink and paper traded
+ * places and the accent wall went red to yellow. It looked wrong in place. The site's
+ * surface in dark mode is #15130d and GitHub's is #0d1117, so the panel faces landed
+ * as a barely-lighter smudge on the page rather than as objects sitting on it, and
+ * the frame -- the whole point of the thing -- stopped reading.
+ *
+ * Paper on GitHub's dark background reads as a card, which is what these are.
+ */
+const PALETTE = {
   ink: '#15130d',        // --sa-black  -> --sa-text
   paper: '#f6f4ee',      // --sa-white  -> --sa-surface
   accent: '#ef2841',     // --sa-red    -> --sa-accent
@@ -24,15 +35,6 @@ const LIGHT = {
   // 3.9:1 on paper it clears the 3:1 large-text floor these sizes sit above.
   up: '#576f00',         // --stats-heat-4 (light)
   down: '#ef2841',       // --sa-red
-}
-
-const DARK = {
-  ink: '#f6f4ee',
-  paper: '#15130d',
-  accent: '#f9c90a',     // --sa-yellow, the dark theme's --sa-accent
-  bottom: '#007d7e',
-  up: '#83a103',         // --stats-heat-4 (dark)
-  down: '#ef2841',
 }
 
 /** `--stats-muted` is color-mix(in srgb, var(--text) 62%, transparent). */
@@ -60,7 +62,6 @@ const TYPE = {
   value: { size: 52, track: 0.015, word: 0.16, line: 1 },       // .stats-tile-value
   delta: { size: 22, track: 0.08, word: 0.16, line: 1 },        // .stats-tile-unit (.42em)
   sub: { size: 12.8, track: 0.08, word: 0.16, line: 1.5 },      // .stats-tile-sub
-  link: { size: 30, track: 0.015, word: 0.16, line: 1 },
 }
 
 /** `.stats-grid { gap: 1.5rem 1.35rem }` -- row gap, then column gap. */
@@ -85,4 +86,4 @@ const SKETCH = {
   depth: 5,
 }
 
-module.exports = { LIGHT, DARK, MUTED_OPACITY, EXTRUDE, PAD, TYPE, GAP, SKETCH }
+module.exports = { PALETTE, MUTED_OPACITY, EXTRUDE, PAD, TYPE, GAP, SKETCH }
