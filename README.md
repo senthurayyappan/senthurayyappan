@@ -8,7 +8,7 @@
   summed from; docs/how-it-works.md explains how the picture is put together.
 -->
 
-I'm a PhD student in Robotics at the **University of Michigan**, working with Professor
+Hello there! I'm a PhD student in Robotics at the **University of Michigan**, working with Professor
 Elliott Rouse in the [Neurobionics Lab](https://neurobionics.robotics.umich.edu/) on
 **robot codesign**. My research looks at how a robot's mechanical design and its control
 policy can co-evolve inside a physics simulation. Before starting my PhD, I led the
