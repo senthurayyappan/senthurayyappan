@@ -1,20 +1,15 @@
 {
-  "name": "wakapi-stats",
-  "version": "1.0.0",
-  "description": "Generate Wakapi statistics charts",
+  "name": "senthurayyappan-profile",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Generates the stat board on my GitHub profile README",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preview": "node src/preview.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1",
-    "dotenv": "^16.4.7",
-    "octokit": "^4.1.0",
-    "vega": "^5.25.0"
+    "opentype.js": "^2.0.0"
   }
 }

@@ -1,0 +1,253 @@
+{
+  "note": "One entry per day. Written by src/index.js; see src/history.js for why it exists.",
+  "window_days": 30,
+  "entries": [
+    {
+      "date": "2026-07-19",
+      "contributions": 6657,
+      "pullRequests": 573,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-20",
+      "contributions": 6680,
+      "pullRequests": 579,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-21",
+      "contributions": 6705,
+      "pullRequests": 584,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-22",
+      "contributions": 6735,
+      "pullRequests": 588,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-23",
+      "contributions": 6752,
+      "pullRequests": 589,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-24",
+      "contributions": 6784,
+      "pullRequests": 601,
+      "stars": 920,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-25",
+      "contributions": 6788,
+      "pullRequests": 603,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-26",
+      "contributions": 6788,
+      "pullRequests": 603,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-27",
+      "contributions": 6843,
+      "pullRequests": 603,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-28",
+      "contributions": 6851,
+      "pullRequests": 603,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-29",
+      "contributions": 6901,
+      "pullRequests": 608,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-30",
+      "contributions": 6936,
+      "pullRequests": 611,
+      "stars": 921,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-07-31",
+      "contributions": 6954,
+      "pullRequests": 613,
+      "stars": 922,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-01",
+      "contributions": 6967,
+      "pullRequests": 613,
+      "stars": 922,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-02",
+      "contributions": 6972,
+      "pullRequests": 615,
+      "stars": 922,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-03",
+      "contributions": 7017,
+      "pullRequests": 621,
+      "stars": 926,
+      "forks": 564,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-04",
+      "contributions": 7022,
+      "pullRequests": 622,
+      "stars": 928,
+      "forks": 565,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-05",
+      "contributions": 7030,
+      "pullRequests": 625,
+      "stars": 929,
+      "forks": 565,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-06",
+      "contributions": 7030,
+      "pullRequests": 625,
+      "stars": 929,
+      "forks": 565,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-07",
+      "contributions": 7030,
+      "pullRequests": 625,
+      "stars": 929,
+      "forks": 566,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-08",
+      "contributions": 7030,
+      "pullRequests": 625,
+      "stars": 930,
+      "forks": 566,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-09",
+      "contributions": 7031,
+      "pullRequests": 626,
+      "stars": 930,
+      "forks": 566,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-10",
+      "contributions": 7040,
+      "pullRequests": 627,
+      "stars": 930,
+      "forks": 566,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-11",
+      "contributions": 7060,
+      "pullRequests": 629,
+      "stars": 930,
+      "forks": 566,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-12",
+      "contributions": 7081,
+      "pullRequests": 634,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-13",
+      "contributions": 7116,
+      "pullRequests": 641,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-14",
+      "contributions": 7124,
+      "pullRequests": 642,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-15",
+      "contributions": 7129,
+      "pullRequests": 642,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-16",
+      "contributions": 7129,
+      "pullRequests": 642,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-17",
+      "contributions": 7141,
+      "pullRequests": 642,
+      "stars": 930,
+      "forks": 567,
+      "seeded": true
+    },
+    {
+      "date": "2026-08-18",
+      "contributions": 7147,
+      "pullRequests": 642,
+      "stars": 930,
+      "forks": 567
+    }
+  ]
+}

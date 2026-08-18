@@ -1,141 +1,118 @@
-const core = require('@actions/core');
-const path = require('path');
-const { fetchWakapiUserStats } = require('./utils/wakapiClient');
-const { ensureDataDir, saveJson, saveChart } = require('./utils/fileSystem');
-const { createRadarChart } = require('./charts/radarChart');
-const { createBarChart } = require('./charts/barChart');
-const { createlineChart } = require('./charts/lineChart');
-const { config } = require('./config');
-const { createWakapiStatsCard, createGithubStatsCard } = require('./charts/statsCard');
-const { getUserGitHubStats } = require('./utils/githubClient');
-const { GITHUB_LIGHT_GREEN, GITHUB_WHITE, GITHUB_BLUE } = require('./charts/configs');
+/**
+ * Draws the stat board on my GitHub profile.
+ *
+ * Reads four numbers from GitHub, compares each against the same number a month ago,
+ * and writes light and dark pictures of them into assets/. The README points at those
+ * pictures; the workflow in .github/workflows/stats.yml runs this daily and commits
+ * whatever changed.
+ *
+ *   node src/index.js            # needs GH_TOKEN
+ *   npm run preview              # no network, invented numbers, for design work
+ */
 
-async function run() {
-  try {
-    // Get inputs from environment variables with fallback to config
-    const wakapiKey = process.env.WAKAPI_TOKEN || config.wakapiToken;
-    const githubUsername = process.env.WAKAPI_USERNAME || config.wakapiUsername;
-    const githubToken = process.env.GH_TOKEN || config.githubToken;
-    const intervals = config.intervals;
+const fs = require('fs')
+const path = require('path')
 
-    const dataDir = ensureDataDir(path.join(__dirname, '..'));
+const { snapshot, backfill, assertPrivateVisibility } = require('./github')
+const history = require('./history')
+const { statsBoard, statsLink } = require('./render')
 
-    let wakapiStatsGenerated = false;
-    if (wakapiKey && githubUsername) {
-      try {
-        const data = await fetchWakapiUserStats(wakapiKey, githubUsername, intervals);
-        
-        if (data) {
-          for (const interval of intervals) {
-            const jsonPath = path.join(dataDir, `wakapi-stats-${interval}.json`);
+const ROOT = path.join(__dirname, '..')
+const ASSETS = path.join(ROOT, 'assets')
+const HISTORY_FILE = path.join(ASSETS, 'history.json')
+const SNAPSHOT_FILE = path.join(ASSETS, 'github-stats.json')
 
-            saveJson(jsonPath, data[interval]);
-            console.log(`Saved Wakapi statistics for ${interval} to data/wakapi-stats-${interval}.json`);
-          }
-
-          // Generate and save combined radar charts and bar charts
-          const chartFields = ['projects', 'languages'];
-          for (const field of chartFields) {
-            const datasets = intervals.map(interval => ({
-              period: interval,
-              data: data[interval].data
-            }));
-
-            // Generate combined radar chart
-            const radarChartBuffer = await createRadarChart(datasets, field);
-            const radarChartPath = path.join(dataDir, `${field}-radar.svg`);
-            saveChart(radarChartBuffer, radarChartPath);
-            console.log(`Generated combined ${field} radar chart: ${radarChartPath}`);
-
-            // Generate bar chart
-            const barChartBuffer = await createBarChart(datasets, field);
-            const barChartPath = path.join(dataDir, `${field}-bar.svg`);
-            saveChart(barChartBuffer, barChartPath);
-            console.log(`Generated ${field} bar chart: ${barChartPath}`);
-          }
-
-          for (const interval of intervals) {
-            const stats = data[interval].data;
-            const statsBuffer = await createWakapiStatsCard({
-              title: config.intervalLabels[interval],
-              totalHours: stats.human_readable_total,
-              dailyAverage: stats.human_readable_daily_average,
-              period: stats.human_readable_range
-            });
-            const statsPath = path.join(dataDir, `${interval}-coding-stats.svg`);
-            saveChart(statsBuffer, statsPath);
-            console.log(`Generated coding stats card for ${interval}: ${statsPath}`);
-          }
-
-          wakapiStatsGenerated = true;
-          console.log('Successfully fetched Wakapi statistics and generated charts');
-        }
-      } catch (wakapiError) {
-        console.log('Failed to fetch Wakapi stats:', wakapiError.message);
-      }
-    }
-
-    if (!wakapiStatsGenerated) {
-      console.log('Skipping Wakapi stats generation - authentication failed or no credentials provided');
-    }
-
-    // Fetch GitHub stats
-    const githubStats = await getUserGitHubStats(githubToken);
-    const githubStatsPath = path.join(dataDir, 'github-stats.json');
-    saveJson(githubStatsPath, githubStats);
-
-
-    // let's generate some stat cards for the github stats: total contributions, total PRs merged, total stars gained, total forks
-    const contributionsCardBuffer = await createGithubStatsCard({
-      value: githubStats.contributions.total,
-      descriptionOne: 'Contributions', 
-      descriptionTwo: 'across all repositories',
-      color: GITHUB_LIGHT_GREEN
-    });
-  
-    const contributionsCardPath = path.join(dataDir, `contributions-card.svg`);
-    saveChart(contributionsCardBuffer, contributionsCardPath);
-
-    const prsCardBuffer = await createGithubStatsCard({
-      value: githubStats.totalPRs,
-      descriptionOne: 'Pull Requests',
-      descriptionTwo: 'successfully merged',
-      color: GITHUB_WHITE
-    });
-
-
-    const prsCardPath = path.join(dataDir, `prs-card.svg`);
-    saveChart(prsCardBuffer, prsCardPath);
-
-    const starsCardBuffer = await createGithubStatsCard({
-      value: githubStats.totalStars,
-      descriptionOne: 'Stargazers',
-      descriptionTwo: 'across all repositories',
-      color: GITHUB_BLUE
-    });
-
-    const starsCardPath = path.join(dataDir, `stars-card.svg`);
-    saveChart(starsCardBuffer, starsCardPath);
-
-    const forksCardBuffer = await createGithubStatsCard({
-      value: githubStats.totalForks,
-      descriptionOne: 'Forks',
-      descriptionTwo: 'across all repositories',
-      color: GITHUB_WHITE
-    });
-
-    const forksCardPath = path.join(dataDir, `forks-card.svg`);
-    saveChart(forksCardBuffer, forksCardPath);
-
-    // let's generate an area chart for the github stats: total views
-    const trafficChartBuffer = await createlineChart(githubStats.topRepositories.slice(0, 5));
-    const trafficChartPath = path.join(dataDir, `traffic-chart.svg`);
-    saveChart(trafficChartBuffer, trafficChartPath);
-  
-  } catch (error) {
-    console.error("Error generating stats:", error);
-    process.exit(1);
-  }
+/** The page the link panel sends people to. */
+const STATS_PAGE = {
+  url: 'senthurayyappan.com/stats',
+  note: 'tracked since 2020, updated daily',
 }
 
-run(); 
+/**
+ * The four tiles, in the order they are drawn: across the top row, then the bottom.
+ *
+ * `field` names the property on a snapshot and on every history entry, which is what
+ * lets the trend be computed the same way for all four.
+ */
+const TILES = [
+  { field: 'contributions', label: 'Contributions' },
+  { field: 'pullRequests', label: 'Pull requests' },
+  { field: 'stars', label: 'Stars' },
+  { field: 'forks', label: 'Forks' },
+]
+
+function tilesFrom(snap, past) {
+  return TILES.map(({ field, label }) => {
+    const value = snap[field]
+    if (!past) return { label, value, delta: null, baseline: null, windowDays: history.WINDOW_DAYS }
+    const before = past.entry[field]
+    return { label, value, delta: value - before, baseline: before, windowDays: past.windowDays }
+  })
+}
+
+function writeSvg(name, contents) {
+  const file = path.join(ASSETS, name)
+  fs.writeFileSync(file, contents)
+  console.log(`  ${name.padEnd(28)} ${(contents.length / 1024).toFixed(1)} KB`)
+}
+
+async function main() {
+  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN
+  const login = process.env.GH_USERNAME || 'senthurayyappan'
+  if (!token) throw new Error('GH_TOKEN is not set')
+
+  console.log(`reading github as ${login}`)
+  const snap = await snapshot(token, login)
+  assertPrivateVisibility(snap)
+  console.log(
+    `  contributions ${snap.contributions} (${snap.restricted} of them private)` +
+    `  pull requests ${snap.pullRequests}  stars ${snap.stars}  forks ${snap.forks}` +
+    `  across ${snap.repositories.length} repositories`,
+  )
+
+  let entries = history.load(HISTORY_FILE)
+  if (!entries.length) {
+    // First run, or the file was lost. Reconstruct the month so the board is never
+    // published with four empty trends; see github.backfill for what it can and
+    // cannot recover.
+    console.log(`no history yet; reconstructing the last ${history.WINDOW_DAYS} days`)
+    const seeded = await backfill(token, login, snap, history.WINDOW_DAYS)
+    entries = seeded.map((e) => ({ ...e, seeded: true }))
+  }
+
+  const past = history.baseline(entries, snap.date)
+  if (past) {
+    console.log(`comparing against ${past.entry.date} (${past.windowDays} days back)`)
+  } else {
+    console.log('nothing to compare against; the board will show no trend')
+  }
+
+  const tiles = tilesFrom(snap, past)
+  for (const tile of tiles) {
+    console.log(`  ${tile.label.padEnd(16)} ${String(tile.value).padStart(6)}  ${tile.delta === null ? '-' : (tile.delta > 0 ? '+' : '') + tile.delta}`)
+  }
+
+  fs.mkdirSync(ASSETS, { recursive: true })
+  for (const mode of ['light', 'dark']) {
+    writeSvg(`github-stats-${mode}.svg`, statsBoard(tiles, mode))
+    writeSvg(`stats-link-${mode}.svg`, statsLink({ ...STATS_PAGE, mode }))
+  }
+
+  const kept = history.save(HISTORY_FILE, history.record(entries, snap))
+  console.log(`history.json: ${kept.length} entries, ${kept[0].date} .. ${kept[kept.length - 1].date}`)
+
+  // The board is a picture; this is the same content as text, so a reader who wants
+  // to check a number against GitHub can see exactly which repositories were counted.
+  fs.writeFileSync(SNAPSHOT_FILE, `${JSON.stringify({
+    generated_at: new Date().toISOString(),
+    window_days: past ? past.windowDays : null,
+    compared_against: past ? past.entry.date : null,
+    tiles: tiles.map(({ label, value, delta, baseline }) => ({ label, value, delta, baseline })),
+    snapshot: snap,
+  }, null, 2)}\n`)
+}
+
+main().catch((err) => {
+  console.error(err.message)
+  process.exit(1)
+})

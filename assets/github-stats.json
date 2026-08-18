@@ -1,0 +1,286 @@
+{
+  "generated_at": "2026-08-18T16:30:24.757Z",
+  "window_days": 30,
+  "compared_against": "2026-07-19",
+  "tiles": [
+    {
+      "label": "Contributions",
+      "value": 7147,
+      "delta": 490,
+      "baseline": 6657
+    },
+    {
+      "label": "Pull requests",
+      "value": 642,
+      "delta": 69,
+      "baseline": 573
+    },
+    {
+      "label": "Stars",
+      "value": 930,
+      "delta": 10,
+      "baseline": 920
+    },
+    {
+      "label": "Forks",
+      "value": 567,
+      "delta": 3,
+      "baseline": 564
+    }
+  ],
+  "snapshot": {
+    "date": "2026-08-18",
+    "contributions": 7147,
+    "restricted": 3926,
+    "pullRequests": 642,
+    "stars": 930,
+    "forks": 567,
+    "repositories": [
+      {
+        "name": "senthurayyappan/anton",
+        "stars": 200,
+        "forks": 19
+      },
+      {
+        "name": "senthurayyappan/import-G-code",
+        "stars": 47,
+        "forks": 10
+      },
+      {
+        "name": "senthurayyappan/blendmsh",
+        "stars": 42,
+        "forks": 6
+      },
+      {
+        "name": "senthurayyappan/Arboc",
+        "stars": 24,
+        "forks": 12
+      },
+      {
+        "name": "senthurayyappan/oslsim",
+        "stars": 18,
+        "forks": 6
+      },
+      {
+        "name": "senthurayyappan/impedance-control-AIR19",
+        "stars": 18,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/Roguelike_platformer",
+        "stars": 13,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/uw_dynamics",
+        "stars": 7,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/spec-shield",
+        "stars": 4,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/rel_imu_plugin",
+        "stars": 4,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/arboc_workspace",
+        "stars": 4,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/residual-limb-scanner",
+        "stars": 2,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/Python_DataScience",
+        "stars": 2,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/oslcontrol",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/automagic-ap",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/underwater_arboc",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/LIDAR_Gazebo",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/DeepLearning",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/RecommenderSystem",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/MachineLearning_SDS",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/RoboticDog",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Self_Driving_Cars_GTA5",
+        "stars": 1,
+        "forks": 1
+      },
+      {
+        "name": "senthurayyappan/ML_CropvsWeed",
+        "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/senthurayyappan",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/senthurayyappan.github.io",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/osl_demo",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/dephy-installer",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/neuropi-motd",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/raspap-installer",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/implicit-surfaces",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/respawn",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Shadow-Bot",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Armadilo",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/MultiArmedBandit",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Deep_Learning",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Python_MachineLearning",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/AutonomousLaneDetector_Gazebo",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Turtlebot_locationmonitor",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Data_Science_From_Scratch.",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Cats-Dogs_Classifier_BasicCNN",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/AgriX",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/Pill_Dispenser_IOT",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/ML_Algorithms",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/ML_Ranking_Algorithm",
+        "stars": 0,
+        "forks": 0
+      },
+      {
+        "name": "neurobionics/robot-ci",
+        "stars": 95,
+        "forks": 387
+      },
+      {
+        "name": "neurobionics/opensourceleg",
+        "stars": 116,
+        "forks": 76
+      },
+      {
+        "name": "neurobionics/onshape-robotics-toolkit",
+        "stars": 304,
+        "forks": 34
+      },
+      {
+        "name": "opensourceleg/opensourceleg.github.io",
+        "stars": 0,
+        "forks": 4
+      },
+      {
+        "name": "neurobionics/pyopensim",
+        "stars": 20,
+        "forks": 5
+      }
+    ]
+  }
+}
