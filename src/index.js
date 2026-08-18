@@ -31,6 +31,12 @@ const README_FILE = path.join(ROOT, 'README.md')
  * Markers rather than a line number or a pattern match on the old title: everything
  * else in that file is written by hand, and a rewrite that guessed at its own extent
  * would eventually guess wrong over someone's prose.
+ *
+ * They trail their lines rather than sitting on their own, and the rewrite below
+ * reproduces that spacing exactly. An HTML comment at the start of a line is a
+ * CommonMark type-2 HTML block, and those interrupt a paragraph -- put the markers on
+ * their own lines and the blog sentence becomes a second paragraph with a margin above
+ * it, instead of following the stats sentence in the same one.
  */
 const POST_START = '<!-- latest-post:start -->'
 const POST_END = '<!-- latest-post:end -->'
@@ -66,8 +72,8 @@ function updateLatestPost(file, post) {
     console.warn(`${path.basename(file)}: no latest-post markers; leaving it alone`)
     return false
   }
-  const sentence = `Or check out my most recent post — [**${post.title}**](${post.url}).`
-  const after = `${before.slice(0, start + POST_START.length)}\n${sentence}\n${before.slice(end)}`
+  const sentence = `Or check out my most recent post, [**${post.title}**](${post.url}).`
+  const after = `${before.slice(0, start + POST_START.length)}\n${sentence} ${before.slice(end)}`
   if (after === before) return false
   fs.writeFileSync(file, after)
   return true
