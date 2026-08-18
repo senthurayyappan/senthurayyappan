@@ -15,7 +15,7 @@ can co-evolve inside simulation, instead of being engineered one after the other
 the PhD I spent 2021–2025 leading the Open-Source Leg ecosystem, whose hardware and
 software stack is now used by more than 25 research groups worldwide.
 
-📝 &nbsp;Latest from the blog — [**The Ballbot Always Wins**](https://senthurayyappan.com/blog/ballbot-always-wins):
+Latest from the blog — [**The Ballbot Always Wins**](https://senthurayyappan.com/blog/ballbot-always-wins):
 the origin story of the ROB311 robot that balances on top of a basketball.
 
 <img width="100%" alt="Four figures, each with its change over the last thirty days: total contributions, pull requests opened, stars across my projects, and forks of them." src="https://raw.githubusercontent.com/senthurayyappan/senthurayyappan/main/assets/github-stats.svg">
