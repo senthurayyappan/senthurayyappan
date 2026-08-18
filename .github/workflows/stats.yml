@@ -52,7 +52,10 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets
+          # README.md too: src/index.js rewrites the sentence naming the newest post.
+          # It is not in the push trigger's path list above, so committing it here
+          # cannot start the job again.
+          git add assets README.md
           if git diff --cached --quiet; then
             echo 'nothing moved today'
             exit 0

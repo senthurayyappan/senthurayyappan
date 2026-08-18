@@ -2,8 +2,9 @@
  * Draws the stat board on my GitHub profile.
  *
  * Reads four numbers from GitHub, compares each against the same number a month ago,
- * and draws them into assets/github-stats.svg. The README points at that file; the
- * workflow in .github/workflows/stats.yml runs this daily and commits it if it moved.
+ * and draws them into assets/github-stats.svg. It also refreshes the one sentence in
+ * the README that names my most recent post. The workflow in
+ * .github/workflows/stats.yml runs this daily and commits whatever moved.
  *
  *   node src/index.js            # needs GH_TOKEN
  *   npm run preview              # no network, invented numbers, for design work
@@ -12,6 +13,7 @@
 const fs = require('fs')
 const path = require('path')
 
+const { latestPost } = require('./blog')
 const { snapshot, backfill, assertPrivateVisibility } = require('./github')
 const history = require('./history')
 const { statsBoard } = require('./render')
@@ -21,6 +23,17 @@ const ASSETS = path.join(ROOT, 'assets')
 const HISTORY_FILE = path.join(ASSETS, 'history.json')
 const SNAPSHOT_FILE = path.join(ASSETS, 'github-stats.json')
 const BOARD_FILE = 'github-stats.svg'
+const README_FILE = path.join(ROOT, 'README.md')
+
+/**
+ * The stretch of README this run is allowed to rewrite.
+ *
+ * Markers rather than a line number or a pattern match on the old title: everything
+ * else in that file is written by hand, and a rewrite that guessed at its own extent
+ * would eventually guess wrong over someone's prose.
+ */
+const POST_START = '<!-- latest-post:start -->'
+const POST_END = '<!-- latest-post:end -->'
 
 /**
  * The four tiles, in the order they are drawn: across the top row, then the bottom.
@@ -42,6 +55,22 @@ function tilesFrom(snap, past) {
     const before = past.entry[field]
     return { label, value, delta: value - before, baseline: before, windowDays: past.windowDays }
   })
+}
+
+/** Rewrite the blog sentence in place. Returns true if the file changed. */
+function updateLatestPost(file, post) {
+  const before = fs.readFileSync(file, 'utf8')
+  const start = before.indexOf(POST_START)
+  const end = before.indexOf(POST_END)
+  if (start === -1 || end === -1 || end < start) {
+    console.warn(`${path.basename(file)}: no latest-post markers; leaving it alone`)
+    return false
+  }
+  const sentence = `Or check out my most recent post — [**${post.title}**](${post.url}).`
+  const after = `${before.slice(0, start + POST_START.length)}\n${sentence}\n${before.slice(end)}`
+  if (after === before) return false
+  fs.writeFileSync(file, after)
+  return true
 }
 
 function writeSvg(name, contents) {
@@ -88,6 +117,12 @@ async function main() {
 
   fs.mkdirSync(ASSETS, { recursive: true })
   writeSvg(BOARD_FILE, statsBoard(tiles))
+
+  const post = await latestPost()
+  if (post) {
+    const changed = updateLatestPost(README_FILE, post)
+    console.log(`latest post: ${post.title}${changed ? ' (README updated)' : ''}`)
+  }
 
   const kept = history.save(HISTORY_FILE, history.record(entries, snap))
   console.log(`history.json: ${kept.length} entries, ${kept[0].date} .. ${kept[kept.length - 1].date}`)

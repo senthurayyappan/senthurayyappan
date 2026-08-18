@@ -14,12 +14,26 @@ renders a sentence better than an SVG does.
   └── src/index.js
         ├── src/github.js     four numbers, and a reconstructed month to compare with
         ├── src/history.js    assets/history.json -- one entry per day
+        ├── src/blog.js       the newest post, from the site's own RSS feed
         └── src/render.js     the picture
               ├── src/design.js   the site's tokens, transcribed
               ├── src/panel.js    the extruded frame and its hand-drawn edges
               ├── src/text.js     layout against senthur-handwriting.woff
               └── src/glyphs.js   outlines, simplified and shared
 ```
+
+## The blog sentence
+
+The last line of the README names my most recent post, and it has to stay right without
+anyone remembering to edit it. `src/blog.js` reads the first `<item>` of
+`senthurayyappan.com/rss` -- the site already sorts that feed newest-first -- and
+`src/index.js` rewrites the stretch of README between the `latest-post` markers.
+
+Markers rather than a line number or a match on the old title: every other line in that
+file is written by hand, and a rewrite that guessed at its own extent would eventually
+guess wrong over someone's prose. If the feed cannot be read the sentence is left alone
+and the run carries on, because a blog line a few days stale beats a failed workflow and
+no redraw at all.
 
 ## The four numbers
 
