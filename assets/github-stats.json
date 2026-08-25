@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-24T07:32:15.947Z",
+  "generated_at": "2026-08-25T07:12:10.606Z",
   "window_days": 30,
-  "compared_against": "2026-07-25",
+  "compared_against": "2026-07-26",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 7823,
-      "delta": 1035,
+      "value": 7845,
+      "delta": 1057,
       "baseline": 6788
     },
     {
       "label": "Pull requests",
-      "value": 644,
-      "delta": 41,
+      "value": 657,
+      "delta": 54,
       "baseline": 603
     },
     {
       "label": "Stars",
-      "value": 932,
-      "delta": 11,
+      "value": 933,
+      "delta": 12,
       "baseline": 921
     },
     {
@@ -29,16 +29,16 @@
     }
   ],
   "snapshot": {
-    "date": "2026-08-24",
-    "contributions": 7823,
-    "restricted": 4594,
-    "pullRequests": 644,
-    "stars": 932,
+    "date": "2026-08-25",
+    "contributions": 7845,
+    "restricted": 4616,
+    "pullRequests": 657,
+    "stars": 933,
     "forks": 568,
     "repositories": [
       {
         "name": "senthurayyappan/anton",
-        "stars": 202,
+        "stars": 203,
         "forks": 19
       },
       {
