@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-08-27T17:41:25.447Z",
+  "generated_at": "2026-08-28T18:48:49.956Z",
   "window_days": 30,
-  "compared_against": "2026-07-28",
+  "compared_against": "2026-07-29",
   "tiles": [
     {
       "label": "Contributions",
       "value": 7860,
-      "delta": 1009,
-      "baseline": 6851
+      "delta": 959,
+      "baseline": 6901
     },
     {
       "label": "Pull requests",
       "value": 664,
-      "delta": 61,
-      "baseline": 603
+      "delta": 56,
+      "baseline": 608
     },
     {
       "label": "Stars",
-      "value": 933,
-      "delta": 12,
+      "value": 935,
+      "delta": 14,
       "baseline": 921
     },
     {
@@ -29,11 +29,11 @@
     }
   ],
   "snapshot": {
-    "date": "2026-08-27",
+    "date": "2026-08-28",
     "contributions": 7860,
     "restricted": 4631,
     "pullRequests": 664,
-    "stars": 933,
+    "stars": 935,
     "forks": 568,
     "repositories": [
       {
@@ -73,7 +73,7 @@
       },
       {
         "name": "senthurayyappan/uw_dynamics",
-        "stars": 7,
+        "stars": 8,
         "forks": 1
       },
       {
@@ -268,7 +268,7 @@
       },
       {
         "name": "neurobionics/onshape-robotics-toolkit",
-        "stars": 304,
+        "stars": 305,
         "forks": 34
       },
       {
