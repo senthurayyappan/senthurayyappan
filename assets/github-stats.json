@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-28T14:08:35.115Z",
+  "generated_at": "2026-09-29T13:03:26.980Z",
   "window_days": 30,
-  "compared_against": "2026-08-29",
+  "compared_against": "2026-08-30",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 8291,
-      "delta": 431,
+      "value": 8358,
+      "delta": 498,
       "baseline": 7860
     },
     {
       "label": "Pull requests",
-      "value": 680,
-      "delta": 16,
+      "value": 692,
+      "delta": 28,
       "baseline": 664
     },
     {
@@ -29,10 +29,10 @@
     }
   ],
   "snapshot": {
-    "date": "2026-09-28",
-    "contributions": 8291,
-    "restricted": 5054,
-    "pullRequests": 680,
+    "date": "2026-09-29",
+    "contributions": 8358,
+    "restricted": 5077,
+    "pullRequests": 692,
     "stars": 944,
     "forks": 568,
     "repositories": [
@@ -149,6 +149,11 @@
       {
         "name": "senthurayyappan/ML_CropvsWeed",
         "stars": 1,
+        "forks": 0
+      },
+      {
+        "name": "senthurayyappan/mkdeck",
+        "stars": 0,
         "forks": 0
       },
       {
