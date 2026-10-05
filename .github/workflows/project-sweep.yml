@@ -1,0 +1,62 @@
+name: Add open issues to the project board
+
+on:
+  schedule:
+    # 6 AM and 2 PM in Detroit. Cron runs in UTC and Detroit moves between UTC-4 and
+    # UTC-5, so this fires at both candidate hours and the first step drops whichever
+    # one is not 6 or 14 local. :07 past the hour, off the top of the hour where
+    # GitHub's scheduler queue piles up.
+    - cron: '7 10,11,18,19 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: project-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    env:
+      # Classic token with `project` and `repo`. The default GITHUB_TOKEN cannot see
+      # user-owned Projects or the private repos linked to one.
+      GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
+      OWNER: ${{ github.repository_owner }}
+      PROJECT: '8'
+    steps:
+      - name: Check the Detroit clock
+        id: clock
+        run: |
+          hour=$(TZ=America/Detroit date +%H)
+          if [ "${{ github.event_name }}" = workflow_dispatch ] || [ "$hour" = 06 ] || [ "$hour" = 14 ]; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo "$hour:00 in Detroit, not a sweep hour"
+          fi
+
+      - name: Add missing issues
+        if: steps.clock.outputs.run == 'true'
+        run: |
+          # The repos to sweep are the ones linked to the board (project settings,
+          # "Manage access" / the repo's Projects tab). Linking a repo is all it takes
+          # to put its issues on the board; there is no list to keep in sync here.
+          repos=$(gh api graphql \
+            -f query='query($o: String!, $n: Int!) { user(login: $o) { projectV2(number: $n) { repositories(first: 100) { nodes { nameWithOwner } } } } }' \
+            -f o="$OWNER" -F n="$PROJECT" \
+            --jq '.data.user.projectV2.repositories.nodes[].nameWithOwner')
+
+          on_board=$(gh project item-list "$PROJECT" --owner "$OWNER" --limit 2000 \
+            --format json --jq '.items[].content.url')
+
+          added=0
+          for repo in $repos; do
+            for url in $(gh issue list -R "$repo" --state open --limit 1000 --json url --jq '.[].url'); do
+              if ! grep -qxF "$url" <<< "$on_board"; then
+                gh project item-add "$PROJECT" --owner "$OWNER" --url "$url" > /dev/null
+                echo "added $url"
+                added=$((added + 1))
+              fi
+            done
+          done
+          echo "$added added from $(wc -w <<< "$repos") linked repos"
