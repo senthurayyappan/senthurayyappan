@@ -2,11 +2,9 @@ name: Add open issues to the project board
 
 on:
   schedule:
-    # 6 AM and 2 PM in Detroit. Cron runs in UTC and Detroit moves between UTC-4 and
-    # UTC-5, so this fires at both candidate hours and the first step drops whichever
-    # one is not 6 or 14 local. :07 past the hour, off the top of the hour where
-    # GitHub's scheduler queue piles up.
-    - cron: '7 10,11,18,19 * * *'
+    # Roughly 6 AM and 2 PM in Detroit (an hour earlier in winter; close enough).
+    # :07 past the hour, off the top of the hour where GitHub's scheduler queue piles up.
+    - cron: '7 10,18 * * *'
   workflow_dispatch:
 
 permissions: {}
@@ -25,38 +23,38 @@ jobs:
       OWNER: ${{ github.repository_owner }}
       PROJECT: '8'
     steps:
-      - name: Check the Detroit clock
-        id: clock
-        run: |
-          hour=$(TZ=America/Detroit date +%H)
-          if [ "${{ github.event_name }}" = workflow_dispatch ] || [ "$hour" = 06 ] || [ "$hour" = 14 ]; then
-            echo 'run=true' >> "$GITHUB_OUTPUT"
-          else
-            echo "$hour:00 in Detroit, not a sweep hour"
-          fi
-
       - name: Add missing issues
-        if: steps.clock.outputs.run == 'true'
+        # Plain GraphQL, not `gh project`: that command first probes whether the owner
+        # is a user or an org, and the probe fails ("unknown owner type") on a token
+        # without read:org.
         run: |
           # The repos to sweep are the ones linked to the board (project settings,
           # "Manage access" / the repo's Projects tab). Linking a repo is all it takes
           # to put its issues on the board; there is no list to keep in sync here.
-          repos=$(gh api graphql \
-            -f query='query($o: String!, $n: Int!) { user(login: $o) { projectV2(number: $n) { repositories(first: 100) { nodes { nameWithOwner } } } } }' \
-            -f o="$OWNER" -F n="$PROJECT" \
-            --jq '.data.user.projectV2.repositories.nodes[].nameWithOwner')
+          project=$(gh api graphql \
+            -f query='query($o: String!, $n: Int!) { user(login: $o) { projectV2(number: $n) {
+              id repositories(first: 100) { nodes { nameWithOwner } } } } }' \
+            -f o="$OWNER" -F n="$PROJECT")
+          project_id=$(jq -r '.data.user.projectV2.id' <<< "$project")
+          repos=$(jq -r '.data.user.projectV2.repositories.nodes[].nameWithOwner' <<< "$project")
 
-          on_board=$(gh project item-list "$PROJECT" --owner "$OWNER" --limit 2000 \
-            --format json --jq '.items[].content.url')
+          on_board=$(gh api graphql --paginate \
+            -f query='query($o: String!, $n: Int!, $endCursor: String) { user(login: $o) { projectV2(number: $n) {
+              items(first: 100, after: $endCursor) { nodes { content { ... on Issue { id } } }
+              pageInfo { hasNextPage endCursor } } } } }' \
+            -f o="$OWNER" -F n="$PROJECT" \
+            --jq '.data.user.projectV2.items.nodes[].content.id // empty')
 
           added=0
           for repo in $repos; do
-            for url in $(gh issue list -R "$repo" --state open --limit 1000 --json url --jq '.[].url'); do
-              if ! grep -qxF "$url" <<< "$on_board"; then
-                gh project item-add "$PROJECT" --owner "$OWNER" --url "$url" > /dev/null
+            while read -r id url; do
+              if ! grep -qxF "$id" <<< "$on_board"; then
+                gh api graphql > /dev/null \
+                  -f query='mutation($p: ID!, $c: ID!) { addProjectV2ItemById(input: {projectId: $p, contentId: $c}) { item { id } } }' \
+                  -f p="$project_id" -f c="$id"
                 echo "added $url"
                 added=$((added + 1))
               fi
-            done
+            done < <(gh issue list -R "$repo" --state open --limit 1000 --json id,url --jq '.[] | "\(.id) \(.url)"')
           done
           echo "$added added from $(wc -w <<< "$repos") linked repos"
