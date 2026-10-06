@@ -1,0 +1,50 @@
+name: Export the project board
+
+on:
+  schedule:
+    # 12:20 UTC, weekdays: 8:20 AM in Detroit in summer, 7:20 in winter. It lands
+    # before the 8:59 morning brief, which reads the file this writes.
+    - cron: '20 12 * * 1-5'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: export-board
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.ADD_TO_PROJECT_PAT }}
+      OWNER: ${{ github.repository_owner }}
+      PROJECT: '8'
+    steps:
+      # The board holds private issue titles and bodies. This repo is public, so the
+      # data goes to a private one, and nothing below prints it: public logs are public.
+      - uses: actions/checkout@v5
+        with:
+          repository: senthurayyappan/planning
+          token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+          path: planning
+
+      - uses: actions/checkout@v5
+        with:
+          path: self
+          sparse-checkout: .github/export-board.sh
+          sparse-checkout-cone-mode: false
+
+      - name: Export
+        run: bash self/.github/export-board.sh planning/board.json
+
+      - name: Commit
+        working-directory: planning
+        run: |
+          # Always committed: exportedAt changes daily, so a stale file means this
+          # workflow broke, and the brief says so instead of trusting old data.
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add board.json
+          git commit -q -m "board snapshot $(date -u +%F)"
+          git push -q
