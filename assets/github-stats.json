@@ -1,24 +1,24 @@
 {
-  "generated_at": "2026-10-12T15:41:18.569Z",
+  "generated_at": "2026-10-13T14:21:43.608Z",
   "window_days": 30,
-  "compared_against": "2026-09-12",
+  "compared_against": "2026-09-13",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 8944,
-      "delta": 973,
+      "value": 8948,
+      "delta": 977,
       "baseline": 7971
     },
     {
       "label": "Pull requests",
-      "value": 771,
-      "delta": 105,
+      "value": 772,
+      "delta": 106,
       "baseline": 666
     },
     {
       "label": "Stars",
-      "value": 947,
-      "delta": 5,
+      "value": 946,
+      "delta": 4,
       "baseline": 942
     },
     {
@@ -29,11 +29,11 @@
     }
   ],
   "snapshot": {
-    "date": "2026-10-12",
-    "contributions": 8944,
-    "restricted": 5573,
-    "pullRequests": 771,
-    "stars": 947,
+    "date": "2026-10-13",
+    "contributions": 8948,
+    "restricted": 5577,
+    "pullRequests": 772,
+    "stars": 946,
     "forks": 570,
     "repositories": [
       {
@@ -278,7 +278,7 @@
       },
       {
         "name": "neurobionics/onshape-robotics-toolkit",
-        "stars": 309,
+        "stars": 308,
         "forks": 34
       },
       {
