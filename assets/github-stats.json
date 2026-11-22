@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-11-21T14:46:13.829Z",
+  "generated_at": "2026-11-22T14:42:35.796Z",
   "window_days": 30,
-  "compared_against": "2026-10-22",
+  "compared_against": "2026-10-23",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 9518,
-      "delta": 394,
-      "baseline": 9124
+      "value": 9519,
+      "delta": 367,
+      "baseline": 9152
     },
     {
       "label": "Pull requests",
       "value": 905,
-      "delta": 80,
-      "baseline": 825
+      "delta": 72,
+      "baseline": 833
     },
     {
       "label": "Stars",
-      "value": 941,
-      "delta": -4,
-      "baseline": 945
+      "value": 942,
+      "delta": -2,
+      "baseline": 944
     },
     {
       "label": "Forks",
@@ -29,11 +29,11 @@
     }
   ],
   "snapshot": {
-    "date": "2026-11-21",
-    "contributions": 9518,
-    "restricted": 6119,
+    "date": "2026-11-22",
+    "contributions": 9519,
+    "restricted": 6120,
     "pullRequests": 905,
-    "stars": 941,
+    "stars": 942,
     "forks": 569,
     "repositories": [
       {
@@ -273,7 +273,7 @@
       },
       {
         "name": "neurobionics/opensourceleg",
-        "stars": 126,
+        "stars": 127,
         "forks": 76
       },
       {
