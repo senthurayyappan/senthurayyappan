@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-11-22T14:42:35.796Z",
+  "generated_at": "2026-11-23T18:26:19.617Z",
   "window_days": 30,
-  "compared_against": "2026-10-23",
+  "compared_against": "2026-10-24",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 9519,
-      "delta": 367,
-      "baseline": 9152
+      "value": 9518,
+      "delta": 301,
+      "baseline": 9217
     },
     {
       "label": "Pull requests",
       "value": 905,
-      "delta": 72,
-      "baseline": 833
+      "delta": 56,
+      "baseline": 849
     },
     {
       "label": "Stars",
       "value": 942,
-      "delta": -2,
-      "baseline": 944
+      "delta": 18,
+      "baseline": 924
     },
     {
       "label": "Forks",
       "value": 569,
-      "delta": -3,
-      "baseline": 572
+      "delta": 1,
+      "baseline": 568
     }
   ],
   "snapshot": {
-    "date": "2026-11-22",
-    "contributions": 9519,
-    "restricted": 6120,
+    "date": "2026-11-23",
+    "contributions": 9518,
+    "restricted": 6119,
     "pullRequests": 905,
     "stars": 942,
     "forks": 569,
