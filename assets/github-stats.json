@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-11-24T17:55:11.738Z",
+  "generated_at": "2026-11-25T17:23:23.107Z",
   "window_days": 30,
-  "compared_against": "2026-10-25",
+  "compared_against": "2026-10-26",
   "tiles": [
     {
       "label": "Contributions",
-      "value": 9522,
-      "delta": 282,
-      "baseline": 9240
+      "value": 9525,
+      "delta": 242,
+      "baseline": 9283
     },
     {
       "label": "Pull requests",
-      "value": 907,
-      "delta": 55,
-      "baseline": 852
+      "value": 908,
+      "delta": 48,
+      "baseline": 860
     },
     {
       "label": "Stars",
       "value": 942,
-      "delta": 18,
-      "baseline": 924
+      "delta": 15,
+      "baseline": 927
     },
     {
       "label": "Forks",
-      "value": 569,
+      "value": 570,
       "delta": 1,
-      "baseline": 568
+      "baseline": 569
     }
   ],
   "snapshot": {
-    "date": "2026-11-24",
-    "contributions": 9522,
-    "restricted": 6123,
-    "pullRequests": 907,
+    "date": "2026-11-25",
+    "contributions": 9525,
+    "restricted": 6126,
+    "pullRequests": 908,
     "stars": 942,
-    "forks": 569,
+    "forks": 570,
     "repositories": [
       {
         "name": "senthurayyappan/anton",
@@ -274,7 +274,7 @@
       {
         "name": "neurobionics/opensourceleg",
         "stars": 127,
-        "forks": 76
+        "forks": 77
       },
       {
         "name": "neurobionics/onshape-robotics-toolkit",
